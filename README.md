@@ -1,2 +1,2 @@
-# DevOpsChallenge
+# DevOpsChallenge :)
 # LabsDemo
