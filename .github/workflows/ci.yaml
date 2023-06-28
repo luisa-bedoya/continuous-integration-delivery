@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-lastest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@2
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Linter (ESLint)
+        run: npm run lint
+
+      - name: Formatter (Prettier)
+        run: npm run prettier
+
+      - name: Test (Jest) CI=true
+        run: npm run test
+
+      - name: Build
+        run: npm run build
